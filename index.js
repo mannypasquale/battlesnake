@@ -4,7 +4,7 @@ const logger = require('morgan');
 const app = express();
 const port = 3000;
 
-app.set('port', 3000);
+app.set('port', (process.env.PORT || 3001))
 app.enable('verbose erros');
 
 app.use(logger('dev'));
