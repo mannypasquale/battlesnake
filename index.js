@@ -14,9 +14,11 @@ app.use(bodyParser.json());
 app.post('/start', (request, response) => {
     console.log('hitting the start post request');
     console.log(request.body);
-     const data = {
-         color: '#DFFF00'
-     };
+    const data = {
+        "color": "#E66465",
+        "headType": "bwc-bonhomme",
+        "tailType": "bwc-flake"
+    };
 
      response.json(data);
 });
