@@ -1,10 +1,26 @@
+const bodyParser = require('body-parser');
 const express = require('express');
+const logger = require('morgan');
 const app = express();
 const port = 3000;
 
-app.post('/', (req, res) => {
-    console.log(req);
-    res.send('Hello World!')}
-    );
-app.post('/hisam', (req, res) => res.send('whaddddup'));
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.set('port', 3000);
+app.enable('verbose erros');
+
+app.use(logger('dev'));
+
+app.use(bodyParser.json());
+
+app.post('/start', (request, response) => {
+    console.log('hitting the start post request');
+    console.log(request.body);
+     const data = {
+         color: '#DFFF00'
+     };
+
+     response.json(data);
+});
+
+app.listen(app.get('port'), () => {
+    console.log('Server listening on port %s', app.get('port'));
+});
