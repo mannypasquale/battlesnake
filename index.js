@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.post('/start', (request, response) => {
     console.log('hitting the start post request');
-    console.log(request.body);
+    console.log(request.body.body);
     const data = {
         color: '#E66465',
         headType: 'bwc-bonhomme',
@@ -26,7 +26,7 @@ app.post('/start', (request, response) => {
     // Handle POST request to '/move'
 app.post('/move', (request, response) => {
     // NOTE: Do something here to generate your move
-    console.log(request.body)
+    console.log(request.body);
     // Response data
     const data = {
       move: 'left', // one of: ['up','down','left','right']
