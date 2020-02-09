@@ -10,15 +10,14 @@ app.use(logger('dev'));
 
 app.use(bodyParser.json());
 
-app.get('/', (request, response) => {
-    response.send('whaddup');
-});
 app.post('/start', (request, response) => {
     const data = {
-        color: '#736CCB'
+        color: '#E66465',
+        headType: 'bwc-bonhomme',
+        tailType: 'bwc-flake'
     };
 
-     response.json(data);
+    return response.json(data);
 });
 
 app.listen(app.get('port'), () => {
