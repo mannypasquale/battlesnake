@@ -16,10 +16,14 @@ app.post('/start', (request, response) => {
         headType: 'bwc-bonhomme',
         tailType: 'bwc-flake'
     };
-
+    console.log(response);
     return response.json(data);
 });
 
+app.post('/move', (request, response) => {
+    console.log(request);
+    console.log(request.body);
+});
 app.listen(app.get('port'), () => {
     console.log('Server listening on port %s', app.get('port'));
 });
