@@ -26,7 +26,7 @@ app.post('/start', (request, response) => {
     // Handle POST request to '/move'
 app.post('/move', (request, response) => {
     // NOTE: Do something here to generate your move
-    console.log(request.body[1]);
+    console.log(request.body.x);
     // Response data
     const data = {
       move: 'left', // one of: ['up','down','left','right']
