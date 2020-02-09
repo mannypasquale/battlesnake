@@ -15,9 +15,7 @@ app.get('/', (request, response) => {
 });
 app.post('/start', (request, response) => {
     const data = {
-        color: '#E66465',
-        headType: 'bwc-bonhomme',
-        tailType: 'bwc-flake'
+        color: '#736CCB'
     };
 
      response.json(data);
