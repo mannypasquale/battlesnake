@@ -10,6 +10,9 @@ app.use(logger('dev'));
 
 app.use(bodyParser.json());
 
+app.get('/', (request, response) => {
+    response.send('whaddup');
+});
 app.post('/start', (request, response) => {
     const data = {
         color: '#E66465',
