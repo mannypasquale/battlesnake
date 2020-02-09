@@ -12,8 +12,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 
 app.post('/start', (request, response) => {
-    console.log('hitting the start post request');
-    console.log(request.body.body);
+    // console.log('hitting the start post request');
+    // console.log(request.body);
     const data = {
         color: '#E66465',
         headType: 'bwc-bonhomme',
