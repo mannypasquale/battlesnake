@@ -23,6 +23,9 @@ app.post('/start', (request, response) => {
      response.json(data);
 });
 
+console.log(response.body);
+
+
     // Handle POST request to '/move'
 app.post('/move', (request, response) => {
     // NOTE: Do something here to generate your move
