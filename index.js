@@ -13,6 +13,8 @@ let board;
 let my_health;
 let my_location;
 app.post('/start', (request, response) => {
+    console.log(request.body.you);
+    console.log(request.body.board);
     // Here is the data for our snake etc
     const data = {
         color: '#E66465',
@@ -24,8 +26,8 @@ app.post('/start', (request, response) => {
         width: request.body.board.width
     };
     my_location = {
-        x: request.body.you.body.x,
-        y: request.body.you.body.y
+        x: request.body.you.body[0].x,
+        y: request.body.you.body[0].y
     };
     return response.json(data);
 });
