@@ -7,9 +7,11 @@ app.set('port', (process.env.PORT || 9001))
 app.enable('verbose erros');
 
 app.use(logger('dev'));
-
+const arr = ['right', 'up', 'left', 'down'];
 app.use(bodyParser.json());
-
+let board;
+let my_health;
+let my_location;
 app.post('/start', (request, response) => {
     // Here is the data for our snake etc
     const data = {
@@ -17,25 +19,22 @@ app.post('/start', (request, response) => {
         headType: 'bwc-bonhomme',
         tailType: 'bwc-flake'
     };
-    console.log(request.body);
-    // app.set('my_location', {x:response.body.you.body.x, y: response.body.you.body.y});
-    // app.set('my_health', response.body.you.health);
-    // app.set('board_size',
-    //     {
-    //         height: response.body.board.height,
-    //         width: response.body.board.width
-    //     });
-    // app.set('food_location',
-    //     {
-    //         x: response.body.board.food[0].x,
-    //         y:response.body.board.food[0].y
-    //     });
+    board = {
+        height: request.body.board.height,
+        width: request.body.board.width
+    };
+    my_location = {
+        x: request.body.you.body.x,
+        y: request.body.you.body.y
+    };
     return response.json(data);
 });
 
 app.post('/move', (request, response) => {
-    console.log(request.body);
-    return response.json({move: "right"});
+    console.log('logging');
+    console.log(board);
+    console.log(my_location);
+    return response.json({move:arr[Math.floor(Math.random() * 4)]});
 });
 
 app.post('/ping', (request, response) => {
