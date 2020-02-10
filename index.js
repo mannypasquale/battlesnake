@@ -13,8 +13,8 @@ let board;
 let my_health;
 let my_location;
 app.post('/start', (request, response) => {
-    console.log(request.body.you);
-    console.log(request.body.board);
+    console.log('start req body you   ' , request.body.you);
+    console.log('body boarrrd   ' , request.body.board);
     // Here is the data for our snake etc
     const data = {
         color: '#E66465',
@@ -34,6 +34,8 @@ app.post('/start', (request, response) => {
 
 app.post('/move', (request, response) => {
     console.log('logging');
+    console.log('request body you  ' , request.body.you);
+    console.log('request body   ' , request.body);
     console.log(board);
     console.log(my_location);
     return response.json({move:arr[Math.floor(Math.random() * 4)]});
