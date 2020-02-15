@@ -21,7 +21,7 @@ app.post('/start', (request, response) => {
   return response.json(data);
 });
 
-app.post('/move', (request, response) => response.json());
+app.post("/move", (request, response) => response.json());
 
 app.post("/ping", (request, response) => response.sendStatus(200));
 app.listen(app.get('port'), () => {
