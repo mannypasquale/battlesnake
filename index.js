@@ -9,7 +9,7 @@ const app = express();
 app.set('port', (process.env.PORT || 9001));
 app.enable('verbose erros');
 
-app.use(logger("dev"));
+app.use(logger('dev'));
 
 app.use(bodyParser.json());
 
