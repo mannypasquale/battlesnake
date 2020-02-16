@@ -1,39 +1,37 @@
 /* eslint-disable prefer-destructuring */
 function getMove(board, myCoords) {
+  const emptySpace = [];
+  /**
+   * Right now this is completely random and doesnt take into consideration where an empty space in
+   * the map is --> thats the next step is to analyze the board and act accordingly
+   */
+  if (typeof board[myCoords.y + 1] !== 'undefined' && board[myCoords.y + 1][myCoords.x] === 0) {
+    emptySpace.push('down');
+  }
+  if (typeof board[myCoords.y - 1] !== 'undefined' && board[myCoords.y - 1][myCoords.x] === 0) {
+    emptySpace.push('up');
+  }
+  if (typeof board[myCoords.y][myCoords.x + 1] !== 'undefined' && board[myCoords.y][myCoords.x + 1] === 0) {
+    emptySpace.push('right');
+  }
+  if (typeof board[myCoords.y][myCoords.x - 1] !== 'undefined' && board[myCoords.y][myCoords.x - 1] === 0) {
+    emptySpace.push('left');
+  }
+  const move = emptySpace[Math.floor(Math.random() * (emptySpace.length - 1))];
   console.log(myCoords);
   console.log(board[0]);
   console.log(board[1]);
   console.log(board[2]);
   console.log(board[3]);
   console.log(board[4]);
-  let move;
-  // CURRENAT ISSUE
-  // Not taking corners into consideration
-  // as well as once i do i also need to take the corners into consideration as well
-  // || (myCoords.y === board.length - 1 && myCoords.x === 0)
-  // || (myCoords.y === board.length - 1 && myCoords.x === board[7].length - 1)
-  if (board[myCoords.y + 1] === 0) {
-    console.log('up');
-    move = 'up';
-  } else if (board[myCoords.y - 1] === 0) {
-    console.log('down');
-    move = 'down';
-  } else if (board[myCoords.y][myCoords.x + 1] === 0) {
-    console.log('right');
-    move = 'right';
-  } else if (board[myCoords.y][myCoords.x - 1] === 0) {
-    console.log('left');
-    move = 'left';
-  } else {
-    console.log('else');
-    move = 'up';
-  }
   return move;
   // check the 4 directions around my head on the board
-  //   |1||0||0||0||1|
-  //   |0||0||0||0||1|
-  //   |0||0||0||0||1|
-  //   |1||0||0||0||0|
+  //   |0||0||0||0||0|
+  //   |0||0||0||0||0|
+  //   |0||0||0||0||0|
+  //   |0||0||1||0||0|
+  // x =2, y = 3 is the head of the snake
+  //
   // const board = [];
   // // set entire board to 0's
   // for (let i = 0; i < data.height; i += 1) {
