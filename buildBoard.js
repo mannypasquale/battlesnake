@@ -27,6 +27,11 @@ function buildBoard(data) {
   for (let i = 0; i < data.food.length; i += 1) {
     board[data.food[i].y][data.food[i].x] = 2;
   }
+  // Show board
+  console.log(board[0]);
+  console.log(board[1]);
+  console.log(board[2]);
+  console.log(board[3]);
   return board;
 }
 
