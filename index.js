@@ -23,15 +23,15 @@ app.post('/start', (request, response) => {
     headType: 'bwc-bonhomme',
     tailType: 'bwc-flake',
   };
-  console.log(buildBoard(request.body.board));
+  // console.log(buildBoard(request.body.board));
 
   return response.json(data);
 });
 
 app.post('/move', (request, response) => {
-  // console.log(request.body.you);
+  console.log(request.body.you);
   // console.log(response);
-  const board = buildBoard(request.body.board);
+  const board = buildBoard(request);
   const move = makeMove(board, request.body.you.body[0]);
 
   return response.json({ move: move });

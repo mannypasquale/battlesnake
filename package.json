@@ -24,7 +24,9 @@
     "cross-env": "^7.0.0",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.2"
+    "n-dimensional-flood-fill": "^1.0.0",
+    "nodemon": "^2.0.2",
+    "pathfinding": "^0.4.18"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
